@@ -1,0 +1,90 @@
+.Photo {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.35);
+}
+
+.Photo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Photo a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Photo img {
+  display: block;
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  z-index: 2;
+}
+
+.Photo:hover .Photo-Layer {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: zoom-in;
+}
+
+.Photo .Photo-Info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Photo .Photo-Info .Top-Icon {
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Photo .Photo-Info .Top-Icon p {
+  padding-right: 25px;
+  padding-top: 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.Photo .Photo-Info .User {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 5px 10px;
+}
+
+.Photo .Photo-Info .User .User-Info {
+  display: flex;
+  align-items: center;
+}
+
+.Photo .Photo-Info .User .Profile {
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.Photo .Photo-Info .User .Name {
+  padding-top: 14px;
+}
+
+.Photo:hover .Photo-Info {
+  opacity: 1;
+}
