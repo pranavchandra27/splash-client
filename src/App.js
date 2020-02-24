@@ -8,7 +8,6 @@ import { PhotoSearchProvider } from "./context/PhotoSearchContext";
 import { CollectionsProvider } from "./context/CollectionsContext";
 import Collections from "./components/Collections/Collections";
 import PhotoModal from "./components/PhotoModal";
-import SearchPhotoModal from "./components/SearchPhotoModal";
 import CollectionPhotos from "./components/Collections/CollectionPhotos";
 import "./App.css";
 
@@ -23,16 +22,7 @@ function App() {
               <Switch>
                 <Route exact path="/" component={Photos} />
                 <Route path="/photos/:id" component={PhotoModal} />
-                <Route
-                  exact
-                  path="/search/photos/:id"
-                  component={SearchPhotos}
-                />
-                <Route
-                  exact
-                  path="/search/photos/:id/:id"
-                  component={SearchPhotoModal}
-                />
+                <Route exact path="/s/photos/:id" component={SearchPhotos} />
                 <Route exact path="/collections" component={Collections} />
                 <Route
                   exact

@@ -3,17 +3,14 @@ import { PhotoSearchContext } from "../../context/PhotoSearchContext";
 import "./SearchPhoto.css";
 
 export class SearchPhoto extends Component {
-  static contextType = PhotoSearchContext;
-  handleClick = () => {
-    const { photo, history } = this.props;
-    const { query } = this.context;
-    history.push(`/search/photos/${query}/${photo.id}`);
-  };
   render() {
-    const { photo } = this.props;
+    const { photo, history } = this.props;
     return (
       <div className="SearchPhoto" style={{ background: photo.color }}>
-        <div onClick={this.handleClick} className="Photo-Layer"></div>
+        <div
+          onClick={() => history.push(`/photos/${photo.id}`)}
+          className="Photo-Layer"
+        ></div>
         <img src={photo.urls.small} alt={photo.alt_description} />
         <div className="Photo-Info">
           <div className="Top-Icon">

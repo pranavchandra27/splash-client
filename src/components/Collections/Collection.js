@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import "./Collection.css";
 
 export class Collection extends Component {
-  handleClick = () => {
-    const { collection, history } = this.props;
-    history.push(`/collections/${collection.id}/${collection.title}`);
-  };
   render() {
-    const { collection } = this.props;
+    const { collection, history } = this.props;
     return (
       <div className="Collection">
         <div className="Card">
-          <div onClick={this.handleClick} className="Card-Layer"></div>
+          <div
+            onClick={() =>
+              history.push(`/collections/${collection.id}/${collection.title}`)
+            }
+            className="Card-Layer"
+          ></div>
           <div className="Cover-Photo">
             <img
               src={collection.preview_photos[0].urls.small}

@@ -32,6 +32,7 @@ export class CollectionPhotos extends Component {
   };
 
   render() {
+    const { history } = this.props;
     const { photos } = this.state;
     return (
       <div className="CollectionPhotos">
@@ -50,7 +51,38 @@ export class CollectionPhotos extends Component {
           >
             {photos.map(photo => (
               <div className="Collection-Photo" key={photo.id}>
+                <div
+                  onClick={() => history.push(`/photos/${photo.id}`)}
+                  className="Photo-Layer"
+                ></div>
                 <img srcSet={photo.urls.small} alt={photo.alt_description} />
+                <div className="Collection-Photo-Info">
+                  <div className="Top-Icon">
+                    <p>
+                      <i className="far fa-heart"></i>
+                    </p>
+                    <p>
+                      <i className="far fa-plus-square"></i>
+                    </p>
+                  </div>
+                  <div className="User">
+                    <div className="User-Info">
+                      <a href={photo.user.links.html}>
+                        <img
+                          className="Profile"
+                          src={photo.user.profile_image.small}
+                          alt={photo.user.name}
+                        />
+                      </a>
+                      <p className="Name">
+                        <a href={photo.user.links.html}>{photo.user.name}</a>
+                      </p>
+                    </div>
+                    <a href={photo.links.download} className="Download">
+                      <i className="fas fa-download"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             ))}
           </Masonry>

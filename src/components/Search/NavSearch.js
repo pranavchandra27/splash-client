@@ -16,7 +16,7 @@ export class NavSearch extends Component {
     await setQuery(value);
     photos.splice(0, photos.length);
     fetchPhotos();
-    history.push(`/search/photos/${value}`);
+    history.push(`/s/photos/${value}`);
   };
 
   render() {
