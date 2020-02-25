@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { PhotoSearchContext } from "../../context/PhotoSearchContext";
 import "./SearchPhoto.css";
 
 export class SearchPhoto extends Component {

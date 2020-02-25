@@ -15,9 +15,7 @@ export class PhotoProvider extends Component {
 
   fetchPhotos = async () => {
     const { page } = this.state;
-    const data = await axios
-      .get(`http://localhost:5000/photos?page=${page}`)
-      .then(res => res.data);
+    const data = await axios.get(`/photos?page=${page}`).then(res => res.data);
 
     this.addPhotos(data);
     this.setState({ page: page + 1 });

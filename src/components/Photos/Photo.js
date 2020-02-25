@@ -37,7 +37,12 @@ export class Photo extends Component {
                 <a href={photo.user.links.html}>{photo.user.name}</a>
               </p>
             </div>
-            <a href={photo.links.download} className="Download">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href={photo.links.download}
+              className="Download"
+            >
               <i className="fas fa-download"></i>
             </a>
           </div>

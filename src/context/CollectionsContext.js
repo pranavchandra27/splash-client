@@ -12,7 +12,7 @@ export class CollectionsProvider extends Component {
   fetchCollections = async () => {
     const { page } = this.state;
     const data = await axios
-      .get(`http://localhost:5000/collections?page=${page}`)
+      .get(`/collections?page=${page}`)
       .then(res => res.data);
 
     //console.log(data);

@@ -16,9 +16,7 @@ class PhotoModal extends Component {
     const { match } = this.props;
     this.setState({ isShow: true });
     const data = await axios
-      .get(
-        `http://localhost:5000/photos/${match.params.id}?id=${match.params.id}`
-      )
+      .get(`/photos/${match.params.id}?id=${match.params.id}`)
       .then(res => res.data);
     this.setState({ dataLoaded: true });
 
@@ -58,7 +56,11 @@ class PhotoModal extends Component {
               <div className="Image">
                 <a href={photoData.user.links.html} className="d-flex">
                   <img
-                    style={{ width: "50px", height: "50px" }}
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      borderRadius: "50%"
+                    }}
                     src={photoData.user.profile_image.large}
                     alt={photoData.user.name}
                   />
@@ -119,7 +121,12 @@ class PhotoModal extends Component {
               {photoData.related_collections.results.map(res => (
                 <div key={res.id} className="Card">
                   <div id="Card" className="d-flex">
-                    <div className="Card-Layer"></div>
+                    <div
+                      onClick={() =>
+                        history.push(`/collections/${res.id}/${res.title}`)
+                      }
+                      className="Card-Layer"
+                    ></div>
                     <div className="Cover-Photo">
                       <img
                         src={res.preview_photos[0].urls.small}
@@ -138,10 +145,13 @@ class PhotoModal extends Component {
                     </div>
                   </div>
                   <div className="pt-3 ">
-                    <h4 className="text-nowrap text-truncate">
-                      <a className="text-black " href={res.links.html}>
-                        {res.title}
-                      </a>
+                    <h4
+                      onClick={() =>
+                        history.push(`/collections/${res.id}/${res.title}`)
+                      }
+                      className="text-nowrap text-black text-truncate"
+                    >
+                      {res.title}
                     </h4>
                     <p className="text-secondary">
                       {res.total_photos} photos - Curated by {res.user.name}
