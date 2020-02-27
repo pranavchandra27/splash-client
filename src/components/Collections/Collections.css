@@ -10,25 +10,27 @@
 
 .Collections-Heading {
   line-height: 1;
-  max-width: 700px;
   margin-bottom: 3rem;
 }
 
 .Collections-Heading .Title {
-  padding-top: 50px;
+  letter-spacing: 0.4px;
+  margin-top: 4rem;
   text-transform: capitalize;
   font-family: sans-serif;
   font-weight: 600;
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 45px;
+  margin-bottom: 10px;
 }
 
 .Collections-Heading p {
+  max-width: 600px;
   line-height: 1.5;
   margin: 0;
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
   color: #333;
+  font-family: sans-serif;
 }
 
 .Collections-Heading a {

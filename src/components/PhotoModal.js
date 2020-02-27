@@ -12,7 +12,11 @@ class PhotoModal extends Component {
     isImageBig: false
   };
 
-  async componentWillMount() {
+  componentWillMount() {
+    this.fetchPhotoData();
+  }
+
+  fetchPhotoData = async () => {
     const { match } = this.props;
     this.setState({ isShow: true });
     const data = await axios
@@ -22,8 +26,8 @@ class PhotoModal extends Component {
 
     this.setState({ photoData: data });
     this.setState({ photo: data.urls.thumb });
-    console.log(this.state.photoData);
-  }
+    //console.log(this.state.photoData);
+  };
 
   zoomImg = () => {
     this.setState({ isImageBig: !this.state.isImageBig });
@@ -49,31 +53,23 @@ class PhotoModal extends Component {
           aria-labelledby="example-modal-styling-title"
         >
           <Modal.Body className="p-0">
-            <div
-              style={{ width: "100%" }}
-              className="d-flex justify-content-between align-items-center pt-3 px-3 Header"
-            >
+            <div className="d-flex justify-content-between align-items-center pt-3 px-3 Header">
               <div className="Image">
                 <a href={photoData.user.links.html} className="d-flex">
                   <img
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      borderRadius: "50%"
-                    }}
-                    src={photoData.user.profile_image.large}
+                    src={photoData.user.profile_image.small}
                     alt={photoData.user.name}
                   />
-                  <div className="pl-3 text-dark ">
-                    <p className="mb-0 pt-1">{photoData.user.name}</p>
-                    <p className="text-secondary mt-0">
-                      @{photoData.user.username}
-                    </p>
+                  <div className="pl-2 text-dark Name">
+                    <p className="m-0 pt-1 pb-1">{photoData.user.name}</p>
+                    <p className="text-secondary">@{photoData.user.username}</p>
                   </div>
                 </a>
               </div>
               <div>
                 <a
+                  rel="noopener noreferrer"
+                  target="_blank"
                   href={photoData.urls.full}
                   download={photoData.urls.full}
                   className="btn btn-success text-white"
@@ -145,14 +141,14 @@ class PhotoModal extends Component {
                     </div>
                   </div>
                   <div className="pt-3 ">
-                    <h4
+                    <h5
                       onClick={() =>
                         history.push(`/collections/${res.id}/${res.title}`)
                       }
-                      className="text-nowrap text-black text-truncate"
+                      className="text-nowrap text-black text-truncate mt-2"
                     >
                       {res.title}
-                    </h4>
+                    </h5>
                     <p className="text-secondary">
                       {res.total_photos} photos - Curated by {res.user.name}
                     </p>

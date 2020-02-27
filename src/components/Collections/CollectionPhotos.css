@@ -4,6 +4,32 @@
   margin: 0 auto;
 }
 
+.CollectionPhotos-Title {
+  position: relative;
+  letter-spacing: 0.4px;
+  padding-top: 4rem;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  font-weight: 600;
+  margin: 0px;
+  font-size: 45px;
+  padding-bottom: 10px;
+}
+
+.CollectionPhotos-Desc {
+  position: relative;
+  max-width: 600px;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  font-family: sans-serif;
+}
+
+.CollectionPhotos-Author {
+  position: relative;
+}
+
 .Collection-Grid {
   margin: 20px auto;
   overflow: hidden;

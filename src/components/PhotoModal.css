@@ -2,6 +2,16 @@
   width: 100%;
 }
 
+.PhotoModal .Header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.PhotoModal .Header .Name p:last-child {
+  font-size: 12px;
+}
+
 .PhotoModal a {
   color: #000;
   text-decoration: none;

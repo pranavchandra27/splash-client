@@ -14,8 +14,6 @@ export class CollectionsProvider extends Component {
     const data = await axios
       .get(`/collections?page=${page}`)
       .then(res => res.data);
-
-    //console.log(data);
     this.setState({ collections: this.state.collections.concat(data) });
     this.setState({ page: page + 1 });
   };

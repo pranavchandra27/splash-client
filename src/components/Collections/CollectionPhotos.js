@@ -8,15 +8,37 @@ import "./CollectionPhotos.css";
 export class CollectionPhotos extends Component {
   state = {
     photos: [],
-    page: 1
+    page: 1,
+    title: "",
+    description: "",
+    author: "",
+    total_photos: "",
+    profile: ""
   };
 
   componentDidMount() {
     this.fetchCollectionPhotos();
+    this.fetchCollectionDetails();
   }
 
   addPhotos = data => {
     this.setState({ photos: this.state.photos.concat(data) });
+  };
+
+  fetchCollectionDetails = async () => {
+    const { match } = this.props;
+    await axios
+      .get(`/collection/${match.params.id}?id=${match.params.id}`)
+      .then(res => {
+        console.log(res.data);
+        this.setState({
+          title: res.data.title,
+          description: res.data.description,
+          author: res.data.user.name,
+          total_photos: res.data.total_photos,
+          profile: res.data.user.profile_image.small
+        });
+      });
   };
 
   fetchCollectionPhotos = async () => {
@@ -24,18 +46,38 @@ export class CollectionPhotos extends Component {
     const { page } = this.state;
 
     await axios
-      .get(
-        `http://localhost:5000/collections/${match.params.id}?id=${match.params.id}&page=${page}`
-      )
+      .get(`/collections/${match.params.id}?id=${match.params.id}&page=${page}`)
       .then(res => this.addPhotos(res.data));
     this.setState({ page: page + 1 });
   };
 
   render() {
     const { history } = this.props;
-    const { photos } = this.state;
-    return (
+    const {
+      photos,
+      title,
+      description,
+      author,
+      total_photos,
+      profile
+    } = this.state;
+    return !title ? (
+      ""
+    ) : (
       <div className="CollectionPhotos">
+        <div className="CollectionPhotos-Top">
+          <h1 className="text-wrapper text-trauncate CollectionPhotos-Title">
+            {title}
+          </h1>
+          <p className="CollectionPhotos-Desc">{description}</p>
+          <p className="mt-5">
+            <img className="mr-2 rounded-circle" src={profile} alt={author} />
+            {author}
+          </p>
+          <p className="CollectionPhotos-Author text-secondary mt-5">
+            {total_photos} photos
+          </p>
+        </div>
         <InfiniteScroll
           dataLength={photos.length}
           hasMore={true}
