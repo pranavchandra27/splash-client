@@ -41,3 +41,9 @@
 .Collections-Heading a:hover {
   color: #333;
 }
+
+@media screen and (max-width: 1280px) {
+  .Collections-Heading {
+    margin-left: 2rem;
+  }
+}

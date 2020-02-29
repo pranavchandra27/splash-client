@@ -28,7 +28,7 @@ export class NavSearch extends Component {
             className="NavSearch-Input"
             type="search"
             value={this.state.value}
-            placeholder="Search free high-resolution photos"
+            placeholder="Search high-resolution photos"
             onChange={e => this.setState({ value: e.target.value })}
           />
           <button className="NavSearch-Button" type="submit">

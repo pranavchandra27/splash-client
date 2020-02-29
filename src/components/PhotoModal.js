@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./PhotoModal.css";
 
 class PhotoModal extends Component {
@@ -43,14 +42,13 @@ class PhotoModal extends Component {
       <>
         <Modal
           className="PhotoModal"
-          size="xl"
           show={isShow}
           onHide={() => {
             this.setState({ isShow: false });
             history.goBack();
           }}
           dialogClassName="modal-90w"
-          aria-labelledby="example-modal-styling-title"
+          aria-labelledby="example-custom-modal-styling-title"
         >
           <Modal.Body className="p-0">
             <div className="d-flex justify-content-between align-items-center pt-3 px-3 Header">
@@ -61,7 +59,7 @@ class PhotoModal extends Component {
                     alt={photoData.user.name}
                   />
                   <div className="pl-2 text-dark Name">
-                    <p className="m-0 pt-1 pb-1">{photoData.user.name}</p>
+                    <p className="m-0">{photoData.user.name}</p>
                     <p className="text-secondary">@{photoData.user.username}</p>
                   </div>
                 </a>
@@ -103,7 +101,6 @@ class PhotoModal extends Component {
                 />
               ) : (
                 <img
-                  className="px-2"
                   style={{ height: "70vh", width: "auto", objectFit: "cover" }}
                   src={photoData.urls.regular}
                   alt={photoData.alt_description}
@@ -113,7 +110,7 @@ class PhotoModal extends Component {
             <div className="pl-5 pt-5">
               <h2 className="h1">Related collections</h2>
             </div>
-            <div className="p-5 d-flex PhotoModal-Collection">
+            <div className="p-5 d-flex flex-wrap PhotoModal-Collection">
               {photoData.related_collections.results.map(res => (
                 <div key={res.id} className="Card">
                   <div id="Card" className="d-flex">
@@ -145,7 +142,7 @@ class PhotoModal extends Component {
                       onClick={() =>
                         history.push(`/collections/${res.id}/${res.title}`)
                       }
-                      className="text-nowrap text-black text-truncate mt-2"
+                      className="text-nowrap text-truncate my-2 Title"
                     >
                       {res.title}
                     </h5>

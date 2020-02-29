@@ -1,7 +1,7 @@
 import React from "react";
 import Photos from "./components/Photos/Photos";
 import SearchPhotos from "./components/Search/SearchPhotos";
-import Navbar from "./components/Navbar/Navbar";
+import AppNavbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { PhotoProvider } from "./context/PhotoContext";
 import { PhotoSearchProvider } from "./context/PhotoSearchContext";
@@ -10,6 +10,7 @@ import Collections from "./components/Collections/Collections";
 import PhotoModal from "./components/PhotoModal";
 import CollectionPhotos from "./components/Collections/CollectionPhotos";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <PhotoProvider>
           <PhotoSearchProvider>
             <CollectionsProvider>
-              <Route component={Navbar} />
+              <Route component={AppNavbar} />
               <Switch>
                 <Route exact path="/" component={Photos} />
                 <Route path="/photos/:id" component={PhotoModal} />

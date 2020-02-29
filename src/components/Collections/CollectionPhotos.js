@@ -70,7 +70,7 @@ export class CollectionPhotos extends Component {
             {title}
           </h1>
           <p className="CollectionPhotos-Desc">{description}</p>
-          <p className="mt-5">
+          <p className="mt-4">
             <img className="mr-2 rounded-circle" src={profile} alt={author} />
             {author}
           </p>

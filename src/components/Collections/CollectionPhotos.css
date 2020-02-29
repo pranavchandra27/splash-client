@@ -117,3 +117,9 @@
 .Collection-Photo:hover .Collection-Photo-Info {
   opacity: 1;
 }
+
+@media screen and (max-width: 1280px) {
+  .CollectionPhotos-Top {
+    margin-left: 2rem;
+  }
+}

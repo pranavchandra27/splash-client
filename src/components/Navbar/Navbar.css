@@ -1,70 +1,20 @@
 .Navbar {
-  width: 100%;
-  height: 60px;
-}
-
-.Navbar-Container {
   width: 95%;
-  height: 100%;
+  height: 60px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.Nav {
-  width: 100%;
-  display: flex;
-  align-items: center;
+.Nav-Search {
+  max-width: 700px;
+  width: 60%;
 }
 
-.Nav .Logo {
-  padding-right: 20px;
-  letter-spacing: -2px;
+.Navbar .More-Options {
+  display: none;
 }
 
-.Nav .Logo a {
-  text-decoration: none;
-  color: #222;
-}
-
-.Nav .Search {
-  width: 100%;
-}
-
-.Navbar-Links {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding-top: 12px;
-  justify-content: space-evenly;
-}
-
-.Navbar-Links li {
-  padding-left: 23px;
-}
-
-.Navbar-Links li a {
-  color: rgb(100, 100, 100);
-  text-decoration: none;
-}
-
-.Navbar-Links li a:hover {
-  color: #444444;
-}
-
-.Navbar-Links .submit {
-  color: #122;
-}
-
-.Navbar-Links .submit:hover {
-  color: #ffffff;
-}
-
-.Navbar-Links .login {
-  color: #eee;
-}
-.Navbar-Links .login:hover {
-  color: #eee;
+@media screen and (max-width: 991px) {
+  .Navbar .More-Options {
+    display: block;
+  }
 }

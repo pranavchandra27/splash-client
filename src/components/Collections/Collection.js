@@ -31,9 +31,12 @@ export class Collection extends Component {
           </div>
         </div>
         <div className="Collection-Info">
-          <h4 onClick={this.handleClick} className="Title">
+          <h5
+            onClick={this.handleClick}
+            className="Title text-nowrap text-truncate mb-1 mt-2"
+          >
             {collection.title}
-          </h4>
+          </h5>
           <p className="Subtitle">
             {collection.total_photos} photos - Curated by {collection.user.name}
           </p>

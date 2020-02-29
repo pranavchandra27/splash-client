@@ -1,24 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Spinner extends Component {
   render() {
-    const style = {
-      parent: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      },
-      image: {
-        width: '200px'
-      }
-    };
     return (
-      <div style={style.parent}>
-        <img
-          style={style.image}
-          src="https://acegif.com/wp-content/uploads/loading-23.gif"
-          alt="loader"
-        />
+      <div className="text-center">
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
       </div>
     );
   }
