@@ -1,28 +1,31 @@
 .SearchPhoto {
+  width: 400px;
   margin-bottom: 20px;
+}
+
+.SearchPhoto-Photo {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.SearchPhoto a {
+.SearchPhoto-Photo a {
+  color: #fff;
+}
+
+.SearchPhoto-Photo a:hover {
   color: #fff;
   text-decoration: none;
 }
 
-.SearchPhoto a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-.SearchPhoto img {
+.SearchPhoto-Photo img {
   display: block;
   overflow: hidden;
   object-fit: cover;
   width: 100%;
 }
 
-.SearchPhoto:hover .Photo-Layer {
+.SearchPhoto-Photo:hover .Photo-Layer {
   z-index: 1;
   position: absolute;
   top: 0;
@@ -33,26 +36,24 @@
   cursor: zoom-in;
 }
 
-.SearchPhoto .Photo-Info {
+.SearchPhoto-Photo .Photo-Info {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   top: 0;
-  right: 0;
   left: 0;
-  bottom: 0;
   opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.SearchPhoto .Photo-Info .Top-Icon {
+.SearchPhoto-Photo .Photo-Info .Top-Icon {
   display: flex;
   justify-content: flex-end;
 }
 
-.SearchPhoto .Photo-Info .Top-Icon p {
+.SearchPhoto-Photo .Photo-Info .Top-Icon p {
   z-index: 1;
   margin-right: 25px;
   margin-top: 10px;
@@ -60,35 +61,38 @@
   color: #fff;
 }
 
-.SearchPhoto .Photo-Info .User {
-  z-index: 1;
+.SearchPhoto-Photo .Photo-Info .User {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px 5px 20px;
 }
 
-.SearchPhoto .Photo-Info .User .User-Info {
+.SearchPhoto-Photo .Photo-Info .User .User-Info {
   z-index: 1;
   display: flex;
   align-items: center;
 }
 
-.SearchPhoto .Photo-Info .User .Profile {
+.SearchPhoto-Photo .Photo-Info .User .Profile {
   width: 35px;
   border-radius: 50%;
   margin-right: 12px;
 }
 
-.SearchPhoto .Photo-Info .User .Name {
+.SearchPhoto-Photo .Photo-Info .User .Name {
   padding-top: 14px;
 }
 
-.SearchPhoto:hover .Photo-Info {
+.SearchPhoto-Photo:hover .Photo-Info {
   opacity: 1;
 }
 
-.SearchPhoto .Photo-Info .User .Download {
+.SearchPhoto-Photo .Photo-Info .User .Download {
   z-index: 1;
   font-size: 18px;
+}
+
+.SearchPhoto .tag {
+  border: 1px solid #ddd;
 }

@@ -68,8 +68,8 @@ class PhotoModal extends Component {
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
-                  href={photoData.urls.full}
-                  download={photoData.urls.full}
+                  href={photoData.urls.raw}
+                  download={photoData.urls.raw}
                   className="btn btn-success text-white"
                 >
                   Download Full Photo
@@ -96,7 +96,7 @@ class PhotoModal extends Component {
               {isImageBig ? (
                 <img
                   style={{ height: "150vh", width: "100%", objectFit: "cover" }}
-                  src={photoData.urls.full}
+                  src={photoData.urls.raw}
                   alt={photoData.alt_description}
                 />
               ) : (

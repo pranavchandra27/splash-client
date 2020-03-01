@@ -25,11 +25,6 @@ export class Navbar extends Component {
                   Collections
                 </Link>
               </li>
-              <li className="nav-item mr-3">
-                <Link className="nav-link " to="/explore">
-                  Explore
-                </Link>
-              </li>
               <li className="nav-item border-left">
                 <Link className="pl-4 nav-link" to="/">
                   Login

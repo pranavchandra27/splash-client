@@ -40,9 +40,9 @@ class HomeSearch extends Component {
           className="d-flex flex-column justify-content-center align-items-center HomeSearch"
         >
           <div className="HomeSearch-headings text-white">
-            <h1 className="display-3">Splash</h1>
-            <p className="h4">Download free high-resolution photos</p>
-            <p className="pb-2 h5">Photos from creators everywhere</p>
+            <h1 className="display-4">Splash</h1>
+            <p>Download free high-resolution photos</p>
+            <p>Photos from creators everywhere</p>
           </div>
           <form className="HomeSearch-form" onSubmit={this.handleSubmit}>
             <div className="form-group">

@@ -1,17 +1,21 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Photo.css";
 
 export class Photo extends Component {
-  handleClick = () => {
-    const { photo, history } = this.props;
-    history.push(`/photos/${photo.id}`);
-  };
   render() {
-    const { photo } = this.props;
+    const { photo, history } = this.props;
 
     return (
       <div className="Photo" style={{ background: photo.color }}>
-        <div onClick={this.handleClick} className="Photo-Layer"></div>
+        <div
+          onClick={() => {
+            history.push(`photos/${photo.id}`);
+          }}
+          className="Photo-Layer"
+        >
+          <a href={photo.urls.small}></a>
+        </div>
         <a href={photo.links.download}>
           <img src={photo.urls.small} alt={photo.alt_description} />
         </a>
@@ -34,7 +38,9 @@ export class Photo extends Component {
                 />
               </a>
               <p className="Name">
-                <a href={photo.user.links.html}>{photo.user.name}</a>
+                <Link to={`/user/${photo.user.username}`}>
+                  {photo.user.name}
+                </Link>
               </p>
             </div>
             <a

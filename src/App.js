@@ -9,6 +9,7 @@ import { CollectionsProvider } from "./context/CollectionsContext";
 import Collections from "./components/Collections/Collections";
 import PhotoModal from "./components/PhotoModal";
 import CollectionPhotos from "./components/Collections/CollectionPhotos";
+import Users from "./components/User/Users";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -22,7 +23,8 @@ function App() {
               <Route component={AppNavbar} />
               <Switch>
                 <Route exact path="/" component={Photos} />
-                <Route path="/photos/:id" component={PhotoModal} />
+                <Route exact path="/user/:username" component={Users} />
+                <Route exact path="/photos/:id" component={PhotoModal} />
                 <Route exact path="/s/photos/:id" component={SearchPhotos} />
                 <Route exact path="/collections" component={Collections} />
                 <Route

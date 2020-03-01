@@ -33,7 +33,7 @@ export class PhotoSearchProvider extends Component {
     this.getQuery();
     const { query, page } = this.state;
     await axios.get(`/search?query=${query}&page=${page}`).then(res => {
-      console.log(res.data);
+      // console.log(res.data);
       this.addPhotos(res.data.results);
     });
     this.setState({ page: page + 1 });
