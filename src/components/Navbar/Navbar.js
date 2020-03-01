@@ -11,7 +11,7 @@ export class Navbar extends Component {
     const active = location.pathname === "/collections" ? "active" : "";
     return (
       <div className="Navbar">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
           <Link className="navbar-brand" to="/">
             Splash
           </Link>

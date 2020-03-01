@@ -3,16 +3,16 @@
   position: relative;
   width: 100%;
   height: 100%;
-  box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.35);
 }
 
 .SearchPhoto a {
-  color: #eee;
+  color: #fff;
   text-decoration: none;
 }
 
 .SearchPhoto a:hover {
   color: #fff;
+  text-decoration: none;
 }
 
 .SearchPhoto img {
@@ -45,18 +45,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.2s;
 }
 
 .SearchPhoto .Photo-Info .Top-Icon {
-  z-index: 1;
   display: flex;
   justify-content: flex-end;
 }
 
 .SearchPhoto .Photo-Info .Top-Icon p {
-  padding-right: 25px;
-  padding-top: 10px;
+  z-index: 1;
+  margin-right: 25px;
+  margin-top: 10px;
   font-size: 20px;
   color: #fff;
 }
@@ -66,24 +65,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px 5px 10px;
+  padding: 0 20px 5px 20px;
 }
 
 .SearchPhoto .Photo-Info .User .User-Info {
+  z-index: 1;
   display: flex;
   align-items: center;
 }
 
 .SearchPhoto .Photo-Info .User .Profile {
-  width: 40px;
+  width: 35px;
   border-radius: 50%;
-  margin-right: 16px;
+  margin-right: 12px;
 }
 
 .SearchPhoto .Photo-Info .User .Name {
-  padding-top: 10px;
+  padding-top: 14px;
 }
 
 .SearchPhoto:hover .Photo-Info {
   opacity: 1;
+}
+
+.SearchPhoto .Photo-Info .User .Download {
+  z-index: 1;
+  font-size: 18px;
 }

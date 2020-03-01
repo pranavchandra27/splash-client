@@ -11,7 +11,7 @@ class PhotoModal extends Component {
     isImageBig: false
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchPhotoData();
   }
 

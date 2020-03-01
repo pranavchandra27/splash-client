@@ -30,7 +30,6 @@ export class CollectionPhotos extends Component {
     await axios
       .get(`/collection/${match.params.id}?id=${match.params.id}`)
       .then(res => {
-        console.log(res.data);
         this.setState({
           title: res.data.title,
           description: res.data.description,

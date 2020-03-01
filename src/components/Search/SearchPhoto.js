@@ -10,7 +10,9 @@ export class SearchPhoto extends Component {
           onClick={() => history.push(`/photos/${photo.id}`)}
           className="Photo-Layer"
         ></div>
-        <img src={photo.urls.small} alt={photo.alt_description} />
+        <a href={photo.links.small}>
+          <img src={photo.urls.small} alt={photo.alt_description} />
+        </a>
         <div className="Photo-Info">
           <div className="Top-Icon">
             <p>
