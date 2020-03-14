@@ -11,7 +11,7 @@ class PhotoModal extends Component {
     isImageBig: false
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this.fetchPhotoData();
   }
 
@@ -21,8 +21,6 @@ class PhotoModal extends Component {
     const data = await axios
       .get(`/photos/${match.params.id}?id=${match.params.id}`)
       .then(res => res.data);
-    this.setState({ dataLoaded: true });
-
     this.setState({ photoData: data });
     this.setState({ photo: data.urls.thumb });
     //console.log(this.state.photoData);

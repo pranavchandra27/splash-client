@@ -4,6 +4,7 @@ import Masonry from "react-masonry-component";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Spinner from "../Spinner/Spinner";
 import "./CollectionPhotos.css";
+import { Link } from "react-router-dom";
 
 export class CollectionPhotos extends Component {
   state = {
@@ -107,16 +108,18 @@ export class CollectionPhotos extends Component {
                     </p>
                   </div>
                   <div className="User">
-                    <div className="User-Info">
-                      <a href={photo.user.links.html}>
+                    <div className="User-Info m-0">
+                      <Link to={`/user/${photo.user.username}`}>
                         <img
                           className="Profile"
                           src={photo.user.profile_image.small}
                           alt={photo.user.name}
                         />
-                      </a>
+                      </Link>
                       <p className="Name">
-                        <a href={photo.user.links.html}>{photo.user.name}</a>
+                        <Link to={`/user/${photo.user.username}`}>
+                          {photo.user.name}
+                        </Link>
                       </p>
                     </div>
                     <a href={photo.links.download} className="Download">

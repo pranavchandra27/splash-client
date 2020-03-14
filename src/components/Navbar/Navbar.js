@@ -37,17 +37,12 @@ export class Navbar extends Component {
               key="left"
               id="dropdown-button-drop-left"
               drop="left"
-              variant="outline-secondary"
               title="More"
+              variant="outline-secondary"
             >
               <Dropdown.Item eventKey="1">
                 <Link className="nav-link p-0 text-dark" to="/collections">
                   Collections
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item eventKey="2">
-                <Link className="nav-link p-0 text-dark" to="/explore">
-                  Explore
                 </Link>
               </Dropdown.Item>
               <Dropdown.Divider />

@@ -45,6 +45,11 @@
   text-decoration: none;
 }
 
+.Collection-Photo a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 .Collection-Photo img {
   display: block;
   overflow: hidden;
@@ -96,12 +101,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px 5px 10px;
+  padding: 0 15px 5px 15px;
 }
 
 .Collection-Photo .Collection-Photo-Info .User .User-Info {
   display: flex;
   align-items: center;
+}
+
+.Collection-Photo .Collection-Photo-Info .User .Download {
+  z-index: 1;
+  font-size: 18px;
 }
 
 .Collection-Photo .Collection-Photo-Info .User .Profile {

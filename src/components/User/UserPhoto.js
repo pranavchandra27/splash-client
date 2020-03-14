@@ -1,23 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Photo.css";
+import "./UserPhoto.css";
 
-export class Photo extends Component {
+class UserPhoto extends Component {
   render() {
     const { photo, history } = this.props;
-
     return (
-      <div className="Photo">
+      <div className="UserPhoto" style={{ background: photo.color }}>
         <div
           onClick={() => {
-            history.push(`photos/${photo.id}`);
+            history.push(`/photos/${photo.id}`);
           }}
           className="Photo-Layer"
         ></div>
-        <div style={{ background: photo.color }}>
+        <a href={photo.links.download}>
           <img src={photo.urls.small} alt={photo.alt_description} />
-        </div>
-        <div className="Photo-Info">
+        </a>
+        <div className="UserPhoto-Info">
           <div className="Top-Icon">
             <p>
               <i className="far fa-heart"></i>
@@ -56,4 +55,4 @@ export class Photo extends Component {
   }
 }
 
-export default Photo;
+export default UserPhoto;

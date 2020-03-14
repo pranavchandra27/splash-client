@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { PhotoSearchContext } from "../../context/PhotoSearchContext";
 import "./SearchPhoto.css";
+import { Link } from "react-router-dom";
 
 export class SearchPhoto extends Component {
   static contextType = PhotoSearchContext;
@@ -39,16 +40,18 @@ export class SearchPhoto extends Component {
               </p>
             </div>
             <div className="User">
-              <div className="User-Info">
-                <a href={photo.user.links.html}>
+              <div className="User-Info m-0">
+                <Link to={`/user/${photo.user.username}`}>
                   <img
                     className="Profile"
                     src={photo.user.profile_image.small}
                     alt={photo.user.name}
                   />
-                </a>
+                </Link>
                 <p className="Name">
-                  <a href={photo.user.links.html}>{photo.user.name}</a>
+                  <Link to={`/user/${photo.user.username}`}>
+                    {photo.user.name}
+                  </Link>
                 </p>
               </div>
               <a href={photo.links.download} className="Download">

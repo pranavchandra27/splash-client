@@ -14,7 +14,7 @@ class HomeSearch extends Component {
   async componentDidMount() {
     await Axios.get(`photos/random?value=landscape`).then(res => {
       this.setState({
-        backImg: res.data[0].urls.regular,
+        backImg: res.data[0].urls.full,
         color: res.data[0].color
       });
     });
