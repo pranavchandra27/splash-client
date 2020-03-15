@@ -126,23 +126,10 @@
 @media screen and (max-width: 768px) {
   .Photo {
     width: 98vw;
+    margin-bottom: 2rem;
   }
-  .Photo .Photo-Layer {
-    display: none;
-  }
-
+  .Photo .Photo-Layer,
   .Photo .Photo-Info {
-    position: relative;
-    opacity: 1;
-    display: block;
-  }
-
-  .Photo .Photo-Info a {
-    font-size: large;
-    color: #333;
-  }
-
-  .Photo .Photo-Info .Top-Icon {
     display: none;
   }
 }

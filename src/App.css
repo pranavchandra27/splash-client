@@ -24,3 +24,26 @@ button {
 .btn {
   font-size: 14px;
 }
+
+.small-display img {
+  width: 50px;
+}
+
+.small-display p {
+  font-size: 18px;
+  color: #000;
+}
+
+.small-display i {
+  font-size: 22px;
+}
+
+.small-display {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .small-display {
+    display: block;
+  }
+}
